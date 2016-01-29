@@ -1,3 +1,5 @@
 # DSA
-Some short program written by Python!
+Some short programs written by Python!
 Life is short use Python
+
+
