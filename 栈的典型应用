@@ -1,0 +1,30 @@
+#进制转换
+def conv(n, base):
+    tempList = ''
+    digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    while n> 0:
+        temp = digit[n% base]
+        tempList+= str(temp)
+        n/= base
+    tempList = tempList[::-1]
+    return tempList
+print conv(417, 16)
+
+#判断括号有效
+def parValid(aStr):
+    tempStr = ''
+    for i in aStr:
+        if i == '(' or i == '[' or i == '{':
+            tempStr += i
+        elif tempStr != '':
+            if i== ')' and tempStr[-1] == '(':
+                tempStr = tempStr[:-1]
+            if i== ']' and tempStr[-1] == '[':
+                tempStr = tempStr[:-1]
+            if i== '}' and tempStr[-1] == '{':
+                tempStr = tempStr[:-1]
+        else:
+            return False
+    return tempStr == ''
+a = '({})([])'
+print parValid(a)
