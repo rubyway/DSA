@@ -1,0 +1,23 @@
+def bucketsort(a):
+    length = len(a)
+    b = [[] for _ in xrange(length)]
+    c = []
+    for i in a:
+        b[int(length*i)].append(i)
+    for j in xrange(length):
+        c.extend(insertsort(b[j]))
+    return c             
+    
+def insertsort(a):
+    length = len(a)
+    key = 0
+    if length <= 1:
+        return a
+    for i in xrange(1, length):
+        key = a[i]
+        j = i- 1
+        while j>= 0 and a[j] > key:
+            a[j+ 1] = a[j]
+            j -= 1
+        a[j+ 1] = key
+    return a
