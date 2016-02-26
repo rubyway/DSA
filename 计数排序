@@ -1,0 +1,15 @@
+def countsort(a, k):
+    lengtha = len(a)
+    b = [0]*lengtha
+    c = [0]*k
+    for i in a:
+        c[i] += 1
+    for i in xrange(1, k):
+        c[i] += c[i- 1]
+    for i in xrange(lengtha- 1, -1, -1):
+        b[c[a[i]]- 1] = a[i]
+        c[a[i]] -= 1
+    return b
+a = [2, 5, 3, 0, 2, 3, 0, 3]
+k = 5
+print countsort(a, 6)
