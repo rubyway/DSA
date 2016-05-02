@@ -22,3 +22,4 @@ if __name__=='__main__':
 	seq=[8,6,4,9,7,3,2,-4,0,-100,99]
 	shellSort(seq)
 	print(seq)
+#http://blog.csdn.net/morewindows/article/details/6668714
