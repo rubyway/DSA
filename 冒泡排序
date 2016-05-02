@@ -1,0 +1,13 @@
+#http://blog.csdn.net/littlethunder/article/details/9400107
+def bubbleSort(seq):
+	length=len(seq)
+	for i in range(length):
+		for j in range(length-1,i,-1):
+			if seq[j-1]>seq[j]:
+				seq[j-1],seq[j]=seq[j],seq[j-1]
+
+
+if __name__=='__main__':
+	seq=[2,9,7,7,4,3,2,-4,54,-7,0]
+	bubbleSort(seq)
+	print(seq)
