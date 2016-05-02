@@ -1,0 +1,40 @@
+#http://blog.csdn.net/littlethunder/article/details/9707669
+def preTraverse(root):
+	if root==None:
+		return
+	print(root.value)
+	preTraverse(root.left)
+	preTraverse(root.right)
+
+def midTraverse(root):
+	if root==None:
+		return
+	midTraverse(root.left)
+	print(root.value)
+	midTraverse(root.right)
+
+def afterTraverse(root):
+	if root==None:
+		return
+	afterTraverse(root.left)
+	afterTraverse(root.right)
+	print(root.value)
+#已知前序遍历结果和中序遍历结果，求后序遍历
+preList=list('DBACEGF')
+midList=list('ABCDEFG')
+afterList=[]
+
+def findTree(preList,midList,afterList):
+	if len(preList)==0:
+		return
+	if len(preList)==1:
+		afterList.append(preList[0])
+		return
+	root=preList[0]
+	n=midList.index(root) #前序遍历中n前为左子树，n后为右子树；下面递归
+	findTree(preList[1:n+1],midList[:n],afterList)
+	findTree(preList[n+1:],midList[n+1:],afterList)
+	afterList.append(root)
+
+findTree(preList,midList,afterList)
+print(afterList)
