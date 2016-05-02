@@ -1,0 +1,14 @@
+#http://blog.csdn.net/littlethunder/article/details/9400083
+def selectionSort(seq):
+	length=len(seq)
+	for i in range(length):
+		mini=min(seq[i:])
+		if seq[i]>mini:
+			j=seq.index(mini,i)
+			seq[i],seq[j]=seq[j],seq[i]
+
+
+if __name__=='__main__':
+	seq=[3,4,5,9,3,1,5,7,90,-2,]
+	selectionSort(seq)
+	print(seq)
